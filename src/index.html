@@ -1,5 +1,262 @@
 <%= require('./html-includes/header.html')() %>
 
-<div class="doc"></div>
+<div class="bg-l3">
+  <header class="header">
+    <div class="flex items-center gap-3">
+      <button class="btn btn-icon btn-primary lg:hidden btn-xs rounded-lg">
+        <c-icon class="icon text-2xl" href="img/icons.svg#menu"></c-icon>
+      </button>
+      <div class="header-logo">
+        <img src="img/logo.svg" alt="">
+      </div>
+    </div>
+    <button class="btn btn-primary btn-light gap-2 max-md:hidden">
+      <c-icon class="icon text-2xl" href="img/icons.svg#file-download"></c-icon>
+      Скачать каталог
+    </button>
+    <div class="max-lg:hidden">
+      <div class="opacity-50 font-alt mb-1">
+        Задайте вопрос, мы на связи
+      </div>
+      <div class="flex gap-2">
+        <button class="btn btn-xs btn-fill btn-telegram rounded-lg px-3">
+          <c-icon class="icon" href="img/icons.svg#telegram"></c-icon>
+        </button>
+        <button class="btn btn-xs btn-fill btn-whatsapp rounded-lg px-3">
+          <c-icon class="icon" href="img/icons.svg#whatsapp"></c-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-start">
+      <div class="font-alt font-semibold mb-1 max-lg:hidden">г. Краснодар, ул. Промышленная 52</div>
+      <a href="javascript:;" class="btn btn-text hover-underline">
+        <span class="font-bold sm:text-1.5xl max-sm:text-primary font-alt">8 800 707 06 12</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="nav border-y border-default/10 max-lg:hidden">
+    <% for(let i = 0; i < 6; i++) { %>
+    <a href="javascript:;" class="btn btn-text hover-underline relative">
+      <div class="absolute -inset-5 -inset-x-7"></div>
+      <span class="text-sm">Расчёт стоимости</span>
+    </a>
+    <% } %>
+  </section>
+
+  <section class="started">
+    <div class="started-image">
+      <img src="img/started.jpg" alt="">
+      <div class="started-ellipse"></div>
+    </div>
+    <div class="started-content">
+      <div class="started-title mb-4 md:mb-5">
+        <span class="text-[#7D94AB]">ремонт</span> квартир <br> под ключ
+      </div>
+      <div class="text-sm md:text-lg mb-6 md:mb-11">
+        Стильный и комфортный для жизни ремонт <br>
+        с гарантией 2 года и рассрочкой платежа
+      </div>
+
+      <div class="flex gap-3 sm:gap-12 max-sm:flex-col">
+        <div class="max-sm:flex items-center gap-4">
+          <c-icon class="icon text-primary text-2.5xl sm:mb-4" href="img/icons.svg#ruler-pen"></c-icon>
+          <div>
+            <div class="text-lg sm:text-xl font-bold font-alt mb-1 sm:mb-3">
+              Бесплатный <br class="max-sm:hidden">
+              замер
+            </div>
+            <div class="text-xs sm:text-sm opacity-70">
+              Наш прораб приедет <br class="max-md:hidden">
+              к вам для замера <br class="max-md:hidden">
+              объекта и расчета <br class="max-md:hidden">
+              стоимости ремонта
+            </div>
+          </div>
+        </div>
+        <div class="max-sm:flex items-center gap-4">
+          <c-icon class="icon text-primary text-2.5xl sm:mb-4" href="img/icons.svg#bill-check"></c-icon>
+          <div>
+            <div class="text-lg sm:text-xl font-bold font-alt mb-1 sm:mb-3">
+              Фиксация <br class="max-sm:hidden">
+              цены
+            </div>
+            <div class="text-xs sm:text-sm opacity-70">
+              Даем гарантию, что <br class="max-md:hidden">
+              в процессе работы <br class="max-md:hidden">
+              стоимость и сроки <br class="max-md:hidden">
+              ремонта не изменятся
+            </div>
+          </div>
+        </div>
+        <div class="max-sm:flex items-center gap-4">
+          <c-icon class="icon text-primary text-2.5xl sm:mb-4" href="img/icons.svg#widjet"></c-icon>
+          <div>
+            <div class="text-lg sm:text-xl font-bold font-alt mb-1 sm:mb-3">
+              Функциональный <br class="max-sm:hidden">
+              интерьер
+            </div>
+            <div class="text-xs sm:text-sm opacity-70">
+              Укомплектуем <br class="max-md:hidden">
+              квартиру всей <br class="max-md:hidden">
+              необходимой <br class="max-md:hidden">
+              мебелью под ключ
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 sm:mt-11 flex flex-col gap-4 sm:w-max">
+        <button class="btn btn-primary btn-fill btn-lg">
+          <span class="sm:text-lg">Рассчитать стоимость</span>
+        </button>
+        <button class="btn btn-primary btn-contur border-default/20 btn-lg gap-2 max-sm:px-3">
+          <img src="img/youtube.svg" alt="" class="icon text-1.5xl">
+          <span class="text-sm sm:text-lg text-default">Посмотрите как мы делаем ремонт</span>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="calc p-section">
+  <div class="flex lg:items-center mb-10 max-lg:flex-col gap-4">
+    <div class="title">
+      <span>Расчет</span> стоимости
+    </div>
+
+    <div class="flex gap-6 items-center lg:ml-auto">
+      <div class="calc-head-image">
+        <c-icon class="icon" href="img/icons.svg#file-check"></c-icon>
+      </div>
+      <div class="font-medium max-sm:text-sm">
+        В течение 10 минут вы получите предварительную смету <br>
+        + каталог наших проектов с ценами на все работы
+      </div>
+    </div>
+  </div>
+
+  <div class="qwiz overflow-hidden">
+    <form class="qwiz-slider swiper w-full max-lg:overflow-visible">
+      <div class="swiper-wrapper">
+        <div class="qwiz-slide swiper-slide">
+          <div class="font-alt font-bold text-xl sm:text-3.5xl mb-6 sm:mb-10">Где хотите сделать ремонт?</div>
+          <div class="flex flex-col gap-3">
+            <% for(let ii = 0; ii < 4; ii++) { %>
+            <label class="qwiz-checkbox btn btn-primary btn-light">
+              <input type="checkbox" class="peer hidden">
+              Новостройка
+              <c-icon class="icon text-2xl ml-auto hidden peer-checked:block" href="img/icons.svg#gal-ochka"></c-icon>
+            </label>
+            <% } %>
+          </div>
+
+          <div class="mt-10"></div>
+          <div class="mt-auto flex gap-4">
+            <button class="btn btn-primary w-1/2 sm:w-36 btn-contur border-default/20 text-default qwiz-prev">
+              Назад
+            </button>
+            <button class="btn btn-primary w-1/2 sm:w-36 btn-fill qwiz-next">
+              Дальше
+            </button>
+          </div>
+        </div>
+        <div class="qwiz-slide swiper-slide">
+          <div class="font-alt font-bold text-xl sm:text-3.5xl mb-6 sm:mb-10">Площадь ремонтируемого
+            помещения?</div>
+          <div class="flex flex-col gap-3">
+            <label class="block">
+              <div class="font-semibold mb-2">Площадь, м2</div>
+              <input type="text" class="input rounded-xl w-full lg:w-[440px] max-w-full">
+            </label>
+          </div>
+          <label class="mt-8 flex items-center gap-2">
+            <input type="checkbox" class="radio rounded-full">
+            <div class="font-semibold">Пропустить вопрос</div>
+          </label>
+
+          <div class="mt-10"></div>
+          <div class="mt-auto flex gap-4">
+            <button class="btn btn-primary w-1/2 sm:w-36 btn-contur border-default/20 text-default qwiz-prev">
+              Назад
+            </button>
+            <button class="btn btn-primary w-1/2 sm:w-36 btn-fill qwiz-next">
+              Дальше
+            </button>
+          </div>
+        </div>
+        <div class="qwiz-slide swiper-slide">
+          <div class="font-alt font-bold text-xl sm:text-3.5xl mb-4 sm:mb-10">Площадь ремонтируемого
+            помещения?</div>
+          <div class="flex flex-col gap-3">
+            <label class="block">
+              <div class="font-semibold mb-2">Имя</div>
+              <input type="text" class="input rounded-xl w-full lg:w-[440px] max-w-full" required>
+            </label>
+            <label class="block">
+              <div class="font-semibold mb-2">Номер телефона</div>
+              <input type="tel" class="input rounded-xl w-full lg:w-[440px] max-w-full" required>
+            </label>
+            <div>
+              <div class="font-semibold mb-2">Как с вами удобнее связаться?</div>
+              <div class="flex gap-1 xs:gap-3 w-full lg:w-[440px] max-w-full max-xs:flex-col">
+                <label class="qwiz-soc grow btn">
+                  <input type="radio" class="hidden" name="soc" checked>
+                  <div class="size-[30px] rounded-full flex bg-[#33AADE]">
+                    <c-icon class="icon text-sm text-white m-auto" href="img/icons.svg#telegram"></c-icon>
+                  </div>
+                  <div class="text-sm">В Telegram</div>
+                </label>
+                <label class="qwiz-soc grow btn">
+                  <input type="radio" class="hidden" name="soc">
+                  <div class="size-[30px] rounded-full flex bg-[#26D044]">
+                    <c-icon class="icon text-sm text-white m-auto" href="img/icons.svg#whatsapp"></c-icon>
+                  </div>
+                  <div class="text-sm">В WhatsApp</div>
+                </label>
+                <label class="qwiz-soc grow btn">
+                  <input type="radio" class="hidden" name="soc">
+                  <div class="size-[30px] rounded-full flex bg-[#B8BAEF]">
+                    <img src="img/phone-color.svg" alt="" class="icon text-lg text-white m-auto">
+                  </div>
+                  <div class="text-sm">Позвонить</div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5"></div>
+          <div class="mt-auto flex gap-4">
+            <button class="btn btn-primary w-1/2 sm:w-36 btn-contur border-default/20 text-default qwiz-prev">
+              Назад
+            </button>
+            <button class="btn btn-primary w-1/2 sm:w-36 btn-fill ">
+              Отправить
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="qwiz-image ratio ratio-[602/562]">
+      <img src="img/qwiz-image.jpg" alt="" class="absolute-fit object-cover">
+    </div>
+  </div>
+</section>
+<script>
+  const slider = new Swiper('.qwiz-slider', {
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    touchRatio: 0,
+    navigation: {
+      prevEl: '.qwiz-prev',
+      nextEl: '.qwiz-next'
+    }
+  })
+
+  const qwiz = new Qwiz(document.querySelector('.qwiz'), slider)
+  qwiz.init()
+</script>
 
 <%= require('./html-includes/footer.html')() %>

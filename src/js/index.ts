@@ -9,9 +9,12 @@ import ripple from '@qpokychuk/ripple'
 import swiper from './swiper'
 import ymaps from './ymaps'
 import animations from './animations'
+import Qwiz from './qwiz'
 
 import '../scss/index.scss'
 
+// @ts-ignore
+window.Qwiz = Qwiz
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
 function loadHandler() {
