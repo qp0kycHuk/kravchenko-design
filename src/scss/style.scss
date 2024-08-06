@@ -114,11 +114,11 @@ body {
       border-radius: initial;
     }
 
-    &-fill {
+    &-theme-fill {
       background:
         radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 73.05%), var(--tw-btn-color);
-
       border-bottom: 4px solid color-mix(in srgb, var(--tw-btn-color) 85%, black);
+      color        : #fff;
 
       &:active {
         // border-bottom: 0 solid color-mix(in srgb, var(--tw-btn-color) 85%, black);
@@ -211,6 +211,38 @@ body {
       height: 26px;
 
     }
+  }
+}
+
+.menu {
+  position  : fixed;
+  left      : 0;
+  top       : 0;
+  height    : 100%;
+  width     : 425px;
+  max-width : 100%;
+  z-index   : theme('zIndex.3');
+  background: theme('colors.l3');
+
+  display       : flex;
+  flex-direction: column;
+  transition    : .25s ease;
+
+  &:not(.toggle-active) {
+    transform: translateX(-100%);
+  }
+
+  &-shadow {
+    position  : fixed;
+    inset     : 0;
+    z-index   : calc(theme('zIndex.3') - 1);
+    background: rgba(0, 0, 0, 0.5);
+    transition: .25s ease;
+  }
+
+  &:not(.toggle-active)+&-shadow {
+    opacity       : 0;
+    pointer-events: none;
   }
 }
 
@@ -788,6 +820,7 @@ body {
 .excursion {
   &-block {
     display: flex;
+    gap    : 100px;
     background:
       url("../img/excursion.png") no-repeat center bottom,
       linear-gradient(64.82deg, rgba(235, 171, 218, 0.8) 0%, rgba(148, 134, 206, 0) 57.73%),
@@ -797,6 +830,26 @@ body {
     position     : relative;
     overflow     : hidden;
 
+    @media (max-width: theme('screens.lg')) {
+      flex-direction: column;
+
+      background:
+        url("../img/excursion-sm.png") no-repeat center / contain,
+        linear-gradient(64.82deg, rgba(235, 171, 218, 0.8) 0%, rgba(148, 134, 206, 0) 57.73%),
+        linear-gradient(241.78deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 51.81%), theme('colors.primary');
+    }
+
+    @media (max-width: theme('screens.sm')) {
+      padding: 24px 16px;
+    }
+
+  }
+
+  &-content {
+    color    : #fff;
+    position : relative;
+    flex-grow: 1;
+
     &::before {
       content   : '';
       width     : 888px;
@@ -805,13 +858,22 @@ body {
 
       position     : absolute;
       top          : calc(50% - 444px);
-      right        : -324px;
+      left         : 100%;
       border-radius: 50%;
-    }
-  }
 
-  &-content {
-    color: #fff;
+      @media (max-width: theme('screens.lg')) {
+        width: 1000px;
+        top  : 100%;
+        left : calc(50% - 500px);
+      }
+
+      @media (max-width: theme('screens.sm')) {
+        width : 768px;
+        height: 768px;
+        left  : calc(50% - 384px);
+        top   : calc(100% + 50px);
+      }
+    }
   }
 
   &-form {
@@ -820,5 +882,34 @@ body {
     margin-left: auto;
     position   : relative;
     z-index    : 1;
+
+    @media (max-width: theme('screens.lg')) {
+      width: 100%;
+    }
   }
+}
+
+.question {
+  &-item {
+    border-radius: 0;
+
+    @media (min-width: theme('screens.sm')) {
+      box-shadow   : 0 3px 1px 0 rgba(0, 0, 0, 0.04), 0 3px 8px 0 rgba(0, 0, 0, 0.06);
+      border       : 1px solid theme('colors.default / 10%');
+      background   : theme('colors.l3');
+      border-radius: 16px;
+    }
+
+    &+& {
+      @media (max-width: theme('screens.sm')) {
+        border-top: 1px solid theme('colors.default / 20%');
+      }
+    }
+  }
+}
+
+.footer {
+  background    : theme('colors.l3');
+  padding-top   : 20px;
+  padding-bottom: 16px;
 }

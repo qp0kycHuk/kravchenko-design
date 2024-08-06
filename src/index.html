@@ -3,7 +3,7 @@
 <div class="bg-l3">
   <header class="header">
     <div class="flex items-center gap-3">
-      <button class="btn btn-icon btn-primary lg:hidden btn-xs rounded-lg">
+      <button class="btn btn-icon btn-primary lg:hidden btn-xs rounded-lg" data-toggle-link="menu">
         <c-icon class="icon text-2xl" href="img/icons.svg#menu"></c-icon>
       </button>
       <div class="header-logo">
@@ -19,10 +19,10 @@
         Задайте вопрос, мы на связи
       </div>
       <div class="flex gap-2">
-        <button class="btn btn-xs btn-fill btn-telegram rounded-lg px-3">
+        <button class="btn btn-xs btn-theme-fill btn-telegram rounded-lg px-3">
           <c-icon class="icon" href="img/icons.svg#telegram"></c-icon>
         </button>
-        <button class="btn btn-xs btn-fill btn-whatsapp rounded-lg px-3">
+        <button class="btn btn-xs btn-theme-fill btn-whatsapp rounded-lg px-3">
           <c-icon class="icon" href="img/icons.svg#whatsapp"></c-icon>
         </button>
       </div>
@@ -108,7 +108,7 @@
       </div>
 
       <div class="mt-6 sm:mt-11 flex flex-col gap-4 sm:w-max">
-        <button class="btn btn-primary btn-fill btn-lg">
+        <button class="btn btn-primary btn-theme-fill btn-lg">
           <span class="sm:text-lg">Рассчитать стоимость</span>
         </button>
         <button class="btn btn-primary btn-contur border-default/20 btn-lg gap-2 max-sm:px-3">
@@ -119,6 +119,60 @@
     </div>
   </section>
 </div>
+
+<div class="menu lg:hidden" id="menu" data-toggle-cover>
+  <header class="flex items-center p-4 justify-between">
+    <div class="flex items-center gap-3">
+      <button class="btn btn-icon btn-primary lg:hidden btn-xs rounded-lg" data-toggle-link="menu">
+        <c-icon class="icon text-2xl" href="img/icons.svg#cross"></c-icon>
+      </button>
+      <div class="header-logo">
+        <img src="img/logo.svg" alt="">
+      </div>
+    </div>
+
+
+    <div class="flex flex-col items-start">
+      <a href="javascript:;" class="btn btn-text hover-underline">
+        <span class="font-bold text-primary font-alt">8 800 707 06 12</span>
+      </a>
+    </div>
+  </header>
+  <div class="px-4 flex flex-col">
+    <% for(let i = 0; i < 6; i++) { %>
+    <a href="javascript:;" class="btn btn-primary btn-sm text-default relative rounded-none -mx-4">
+      <span class="text-sm w-full font-normal">Расчёт стоимости</span>
+    </a>
+    <% } %>
+  </div>
+  <div class="mt-auto p-4">
+    <button class="btn btn-primary btn-light gap-2 w-full">
+      <c-icon class="icon text-2xl" href="img/icons.svg#file-download"></c-icon>
+      Скачать каталог
+    </button>
+    <div class="mt-6">
+      <div class="opacity-50 font-alt mb-1">
+        Задайте вопрос, мы на связи
+      </div>
+      <div class="flex gap-2">
+        <button class="btn btn-xs btn-theme-fill btn-telegram rounded-lg px-3">
+          <c-icon class="icon" href="img/icons.svg#telegram"></c-icon>
+        </button>
+        <button class="btn btn-xs btn-theme-fill btn-whatsapp rounded-lg px-3">
+          <c-icon class="icon" href="img/icons.svg#whatsapp"></c-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-start mt-6">
+      <div class="font-alt mb-1 ">г. Краснодар, ул. Промышленная 52</div>
+      <a href="javascript:;" class="btn btn-text hover-underline">
+        <span class="font-bold text-1.5xl font-alt">8 800 707 06 12</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="menu-shadow"></div>
 
 <!-- Расчет стоимости -->
 <section class="calc p-section">
@@ -158,7 +212,7 @@
             <button class="btn btn-primary w-1/2 sm:w-36 btn-contur border-default/20 text-default qwiz-prev">
               Назад
             </button>
-            <button class="btn btn-primary w-1/2 sm:w-36 btn-fill qwiz-next">
+            <button class="btn btn-primary w-1/2 sm:w-36 btn-theme-fill qwiz-next">
               Дальше
             </button>
           </div>
@@ -182,7 +236,7 @@
             <button class="btn btn-primary w-1/2 sm:w-36 btn-contur border-default/20 text-default qwiz-prev">
               Назад
             </button>
-            <button class="btn btn-primary w-1/2 sm:w-36 btn-fill qwiz-next">
+            <button class="btn btn-primary w-1/2 sm:w-36 btn-theme-fill qwiz-next">
               Дальше
             </button>
           </div>
@@ -232,7 +286,7 @@
             <button class="btn btn-primary w-1/2 sm:w-36 btn-contur border-default/20 text-default qwiz-prev">
               Назад
             </button>
-            <button class="btn btn-primary w-1/2 sm:w-36 btn-fill ">
+            <button class="btn btn-primary w-1/2 sm:w-36 btn-theme-fill ">
               Отправить
             </button>
           </div>
@@ -317,7 +371,7 @@
                 <div class="ratio ratio-1/1 protfolio-item-image">
                   <img src="img/test.gif" alt="" class="absolute-fit object-cover">
                   <div class="absolute-fit flex">
-                    <button class="protfolio-item-play btn btn-primary btn-fill btn-icon m-auto btn-[90px]">
+                    <button class="protfolio-item-play btn btn-primary btn-theme-fill btn-icon m-auto btn-[90px]">
                       <c-icon class="icon text-4xl" href="img/icons.svg#play"></c-icon>
                     </button>
                   </div>
@@ -354,7 +408,7 @@
                   <div class="ratio ratio-1/1 protfolio-item-thumb">
                     <img src="img/test.gif" alt="" class="absolute-fit object-cover">
                     <div class="absolute-fit flex">
-                      <button class="protfolio-item-play btn btn-primary btn-fill btn-icon m-auto btn-[36px]">
+                      <button class="protfolio-item-play btn btn-primary btn-theme-fill btn-icon m-auto btn-[36px]">
                         <c-icon class="icon text-sm" href="img/icons.svg#play"></c-icon>
                       </button>
                     </div>
@@ -365,7 +419,7 @@
             </div>
             <div class="mt-auto"></div>
             <div class="flex mt-7 sm:mt-8">
-              <button class="btn btn-fill btn-primary ">
+              <button class="btn btn-theme-fill btn-primary ">
                 <span class="leading-none">Рассчитать стоимость такого ремонта</span>
               </button>
             </div>
@@ -474,7 +528,7 @@
       решений бесплатно, либо разработать уникальный дизайн
       интерьера конкретно для вас
     </div>
-    <button class="mt-10 btn btn-primary btn-fill">Получить предложение</button>
+    <button class="mt-10 btn btn-primary btn-theme-fill">Получить предложение</button>
   </div>
 </section>
 
@@ -522,7 +576,7 @@
       </div>
 
       <div class="flex mt-6 sm:mt-10">
-        <a href="javascript:;" class="btn btn-primary btn-fill">Перейти на платформу</a>
+        <a href="javascript:;" class="btn btn-primary btn-theme-fill">Перейти на платформу</a>
       </div>
     </div>
     <div class="mebel-image ratio ratio-[570/662]">
@@ -552,7 +606,7 @@
         <% } %>
       </div>
       <div class="mt-6 sm:mt-10 flex">
-        <a href="javascript:;" class="btn btn-primary btn-fill">Оставить заявку</a>
+        <a href="javascript:;" class="btn btn-primary btn-theme-fill">Оставить заявку</a>
       </div>
     </div>
     <div class="belive-image ratio ratio-[343/320]">
@@ -609,7 +663,7 @@
         <input type="tel" class="w-full input rounded-xl" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _">
       </label>
     </div>
-    <button class="btn btn-primary btn-fill mt-8">Перезвоните мне</button>
+    <button class="btn btn-primary btn-theme-fill mt-8">Перезвоните мне</button>
     <a href="javascript:;" class="mt-6 text-xs opacity-70 hover:underline block">
       Отправляя форму, Вы даете согласие на обработку
       Ваших персональных данных
@@ -681,17 +735,17 @@
   <div class="excursion-block">
     <div class="excursion-content">
       <div class="title">
-        Хотите на экскурсию <br>
+        Хотите на экскурсию <br class="max-sm:hidden">
         по нашим объектам?
       </div>
-      <div class="mt-6">
-        Вместе с прорабом отправьтесь на экскурсию <br>
-        по нашим действующим объектам и убедитесь <br>
+      <div class="mt-6 max-sm:text-sm">
+        Вместе с прорабом отправьтесь на экскурсию <br class="max-sm:hidden">
+        по нашим действующим объектам и убедитесь <br class="max-sm:hidden">
         в качестве наших работ
       </div>
     </div>
     <div class="excursion-form">
-      <div class="font-alt font-bold text-3.5xl mb-6">
+      <div class="font-alt font-bold text-2xl sm:text-3.5xl mb-6">
         Оставить заявку
       </div>
       <div class="flex flex-col gap-4">
@@ -704,7 +758,7 @@
           <input type="tel" class="w-full input rounded-xl" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _">
         </label>
       </div>
-      <button class="btn btn-primary btn-fill mt-8">Перезвоните мне</button>
+      <button class="btn btn-primary btn-theme-fill mt-8">Перезвоните мне</button>
       <a href="javascript:;" class="mt-6 text-xs opacity-70 hover:underline block">
         Отправляя форму, Вы даете согласие на обработку
         Ваших персональных данных
@@ -712,6 +766,71 @@
     </div>
   </div>
 </section>
+
+<section class="p-section question">
+  <div class="title text-center mb-6 sm:mb-10">Вопрос-ответ</div>
+
+  <div class="grid lg:grid-cols-2 sm:gap-4 lg:gap-6 items-start">
+    <% for(let i = 0; i < 6; i++) { %>
+    <a href="javascript:;" class="question-item btn flex-col px-2 max-sm:-mx-2 sm:p-0 h-auto group" data-toggle-cover data-toggle-link>
+      <div class="flex items-center sm:px-4 max-sm:py-4 sm:h-20 w-full rounded-none gap-3">
+        <c-icon class="icon text-2xl text-[#EE9F73]" href="img/icons.svg#question"></c-icon>
+        <div class="font-alt text-sm sm:text-xl font-semibold">Возможно у вас заказать дизайн проект?</div>
+
+        <c-icon class="icon text-xl sm:text-2.5xl ml-auto opacity-40 group-[.toggle-active]:-rotate-90" href="img/icons.svg#to-right"></c-icon>
+      </div>
+      <div class="sm:p-5 sm:pt-1 max-sm:py-3 active-enabled" data-toggle-content data-toggle-static>
+        <div class="text-sm font-normal">
+          Вы обращаетесь к нашим менеджерам по телефону указанному на сайте
+          или оставляете заявку на расчет стоимости ремонта под ключ. Сметный отдел просчитываем полную стоимость ремонта и если вас устраивает, подписываем договор и начинаем черновые работы согласно графику строительных работ.
+        </div>
+      </div>
+    </a>
+    <% } %>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="flex lg:items-center justify-between gap-5 max-lg:flex-col">
+    <div class="flex items-start sm:items-center gap-4 sm:gap-10 max-sm:flex-col">
+      <img src="img/logo.svg" alt="">
+
+      <div class="opacity-70">
+        Вся базаактуальной <br>
+        недвижимостив одном месте
+      </div>
+    </div>
+    <div class="">
+      <div class="flex gap-2">
+        <button class="btn btn-xs btn-fill btn-[#f00] rounded-lg px-3">
+          <c-icon class="icon" href="img/icons.svg#play"></c-icon>
+        </button>
+        <button class="btn btn-xs btn-fill btn-[#0077FF] rounded-lg px-3">
+          <c-icon class="icon" href="img/icons.svg#vk"></c-icon>
+        </button>
+        <button class="btn btn-xs btn-fill btn-[#33AADE] rounded-lg px-3">
+          <c-icon class="icon" href="img/icons.svg#telegram"></c-icon>
+        </button>
+        <button class="btn btn-xs btn-fill btn-[#26D044] rounded-lg px-3">
+          <c-icon class="icon" href="img/icons.svg#whatsapp"></c-icon>
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-col items-start">
+      <div class="font-alt mb-1 ">г. Краснодар, ул. Промышленная 52</div>
+      <a href="javascript:;" class="btn btn-text hover-underline">
+        <span class="font-bold sm:text-1.5xl max-sm:text-primary font-alt">8 800 707 06 12</span>
+      </a>
+    </div>
+  </div>
+  <div class="my-4 border-t border-default/10"></div>
+  <div class="flex lg:items-center gap-3 lg:gap-20 opacity-60 max-lg:flex-col">
+    <div class="mr-auto">ООО "Команда Кравченко"</div>
+    <div class="">ИНН 2311243962</div>
+    <div class="">КПП 231001001</div>
+    <div class="">ОГРН 1172375071417</div>
+  </div>
+</footer>
 
 
 <%= require('./html-includes/footer.html')() %>
