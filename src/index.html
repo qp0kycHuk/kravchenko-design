@@ -1,66 +1,26 @@
 <%= require('./html-includes/header.html')() %>
 
+
+
+
+
 <div class="bg-l3">
-  <header class="header">
-    <div class="flex items-center gap-3">
-      <button class="btn btn-icon btn-primary lg:hidden btn-xs rounded-lg" data-toggle-link="menu">
-        <c-icon class="icon text-2xl" href="img/icons.svg#menu"></c-icon>
-      </button>
-      <div class="header-logo">
-        <img src="img/logo.svg" alt="">
-      </div>
-    </div>
-    <button class="btn btn-primary btn-light gap-2 max-md:hidden">
-      <c-icon class="icon text-2xl" href="img/icons.svg#file-download"></c-icon>
-      Скачать каталог
-    </button>
-    <div class="max-lg:hidden">
-      <div class="opacity-50 font-alt mb-1">
-        Задайте вопрос, мы на связи
-      </div>
-      <div class="flex gap-2">
-        <button class="btn btn-xs btn-theme-fill btn-telegram rounded-lg px-3">
-          <c-icon class="icon" href="img/icons.svg#telegram"></c-icon>
-        </button>
-        <button class="btn btn-xs btn-theme-fill btn-whatsapp rounded-lg px-3">
-          <c-icon class="icon" href="img/icons.svg#whatsapp"></c-icon>
-        </button>
-      </div>
-    </div>
-
-    <div class="flex flex-col items-start">
-      <div class="font-alt font-semibold mb-1 max-lg:hidden">г. Краснодар, ул. Промышленная 52</div>
-      <a href="javascript:;" class="btn btn-text hover-underline">
-        <span class="font-bold sm:text-1.5xl max-sm:text-primary font-alt">8 800 707 06 12</span>
-      </a>
-    </div>
-  </header>
-
-  <section class="nav border-y border-default/10 max-lg:hidden">
-    <% for(let i = 0; i < 6; i++) { %>
-    <a href="javascript:;" class="btn btn-text hover-underline relative">
-      <div class="absolute -inset-5 -inset-x-7"></div>
-      <span class="text-sm">Расчёт стоимости</span>
-    </a>
-    <% } %>
-  </section>
-
   <section class="started">
-    <div class="started-image">
+    <div class="started-image" data-animation="fadeIn">
       <img src="img/started.jpg" alt="">
       <div class="started-ellipse"></div>
     </div>
     <div class="started-content">
-      <div class="started-title mb-4 md:mb-5">
+      <div class="started-title mb-4 md:mb-5" data-animation="fadeInUp">
         <span class="text-[#7D94AB]">ремонт</span> квартир <br> под ключ
       </div>
-      <div class="text-sm md:text-lg mb-6 md:mb-11">
+      <div class="text-sm md:text-lg mb-6 md:mb-11" data-animation="fadeInUp" data-delay="0.1">
         Стильный и комфортный для жизни ремонт <br>
         с гарантией 2 года и рассрочкой платежа
       </div>
 
       <div class="flex gap-3 sm:gap-12 max-sm:flex-col">
-        <div class="max-sm:flex items-center gap-4">
+        <div class="max-sm:flex items-center gap-4" data-animation="fadeInUp" data-delay="0.1">
           <c-icon class="icon text-primary text-2.5xl sm:mb-4" href="img/icons.svg#ruler-pen"></c-icon>
           <div>
             <div class="text-lg sm:text-xl font-bold font-alt mb-1 sm:mb-3">
@@ -75,7 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="max-sm:flex items-center gap-4">
+        <div class="max-sm:flex items-center gap-4" data-animation="fadeInUp" data-delay="0.2">
           <c-icon class="icon text-primary text-2.5xl sm:mb-4" href="img/icons.svg#bill-check"></c-icon>
           <div>
             <div class="text-lg sm:text-xl font-bold font-alt mb-1 sm:mb-3">
@@ -90,7 +50,7 @@
             </div>
           </div>
         </div>
-        <div class="max-sm:flex items-center gap-4">
+        <div class="max-sm:flex items-center gap-4" data-animation="fadeInUp" data-delay="0.3">
           <c-icon class="icon text-primary text-2.5xl sm:mb-4" href="img/icons.svg#widjet"></c-icon>
           <div>
             <div class="text-lg sm:text-xl font-bold font-alt mb-1 sm:mb-3">
@@ -107,7 +67,7 @@
         </div>
       </div>
 
-      <div class="mt-6 sm:mt-11 flex flex-col gap-4 sm:w-max">
+      <div class="mt-6 sm:mt-11 flex flex-col gap-4 sm:w-max" data-animation="fadeInUp">
         <button class="btn btn-primary btn-theme-fill btn-lg">
           <span class="sm:text-lg">Рассчитать стоимость</span>
         </button>
@@ -120,68 +80,16 @@
   </section>
 </div>
 
-<div class="menu lg:hidden" id="menu" data-toggle-cover>
-  <header class="flex items-center p-4 justify-between">
-    <div class="flex items-center gap-3">
-      <button class="btn btn-icon btn-primary lg:hidden btn-xs rounded-lg" data-toggle-link="menu">
-        <c-icon class="icon text-2xl" href="img/icons.svg#cross"></c-icon>
-      </button>
-      <div class="header-logo">
-        <img src="img/logo.svg" alt="">
-      </div>
-    </div>
 
-
-    <div class="flex flex-col items-start">
-      <a href="javascript:;" class="btn btn-text hover-underline">
-        <span class="font-bold text-primary font-alt">8 800 707 06 12</span>
-      </a>
-    </div>
-  </header>
-  <div class="px-4 flex flex-col">
-    <% for(let i = 0; i < 6; i++) { %>
-    <a href="javascript:;" class="btn btn-primary btn-sm text-default relative rounded-none -mx-4">
-      <span class="text-sm w-full font-normal">Расчёт стоимости</span>
-    </a>
-    <% } %>
-  </div>
-  <div class="mt-auto p-4">
-    <button class="btn btn-primary btn-light gap-2 w-full">
-      <c-icon class="icon text-2xl" href="img/icons.svg#file-download"></c-icon>
-      Скачать каталог
-    </button>
-    <div class="mt-6">
-      <div class="opacity-50 font-alt mb-1">
-        Задайте вопрос, мы на связи
-      </div>
-      <div class="flex gap-2">
-        <button class="btn btn-xs btn-theme-fill btn-telegram rounded-lg px-3">
-          <c-icon class="icon" href="img/icons.svg#telegram"></c-icon>
-        </button>
-        <button class="btn btn-xs btn-theme-fill btn-whatsapp rounded-lg px-3">
-          <c-icon class="icon" href="img/icons.svg#whatsapp"></c-icon>
-        </button>
-      </div>
-    </div>
-
-    <div class="flex flex-col items-start mt-6">
-      <div class="font-alt mb-1 ">г. Краснодар, ул. Промышленная 52</div>
-      <a href="javascript:;" class="btn btn-text hover-underline">
-        <span class="font-bold text-1.5xl font-alt">8 800 707 06 12</span>
-      </a>
-    </div>
-  </div>
-</div>
-<div class="menu-shadow"></div>
 
 <!-- Расчет стоимости -->
 <section class="calc p-section">
   <div class="flex lg:items-center mb-10 max-lg:flex-col gap-4">
-    <div class="title">
+    <div class="title" data-animation="fadeInUp">
       <span>Расчет</span> стоимости
     </div>
 
-    <div class="flex gap-6 items-center lg:ml-auto">
+    <div class="flex gap-6 items-center lg:ml-auto" data-animation="fadeInUp">
       <div class="calc-head-image">
         <c-icon class="icon" href="img/icons.svg#file-check"></c-icon>
       </div>
@@ -192,7 +100,7 @@
     </div>
   </div>
 
-  <div class="qwiz overflow-hidden">
+  <div class="qwiz overflow-hidden" data-animation="fadeInUp">
     <form class="qwiz-slider swiper w-full max-lg:overflow-visible">
       <div class="swiper-wrapper">
         <div class="qwiz-slide swiper-slide">
@@ -316,9 +224,9 @@
 
 <!-- Пакетные ремонты – всё включено! -->
 <section class="package p-section overflow-hidden rounded-section">
-  <div class="title text-center mb-6 sm:mb-10">Пакетные ремонты – всё включено!</div>
+  <div class="title text-center mb-6 sm:mb-10" data-animation="fadeInUp">Пакетные ремонты – всё включено!</div>
 
-  <div class="package-slider swiper -mx-2.5 max-lg:overflow-visible">
+  <div class="package-slider swiper -mx-2.5 max-lg:overflow-visible" data-animation="fadeInUp">
     <div class="swiper-wrapper">
       <% for(let i = 0; i < 4; i++) { %>
       <div class="swiper-slide px-2.5 w-[296px] lg:w-1/4 pb-2">
@@ -354,11 +262,11 @@
 </script>
 
 <section class="p-section overflow-hidden">
-  <div class="title text-center mb-6 sm:mb-10">
+  <div class="title text-center mb-6 sm:mb-10" data-animation="fadeInUp">
     Наши <span>флагманские</span> проекты
   </div>
 
-  <div class="relative max-lg:px-2">
+  <div class="relative max-lg:px-2" data-animation="fadeInUp">
     <div class="protfolio-slider swiper max-lg:overflow-visible">
       <div class="swiper-wrapper">
         <% for(let i = 0; i < 10; i++) { %>
@@ -482,8 +390,8 @@
 
 <!-- Видео -->
 <section class="rounded-section bg-l3 p-section video overflow-hidden">
-  <div class="title text-center mb-6 sm:mb-10">Как мы делаем ремонт</div>
-  <div class="video-slider swiper max-md:-mx-1.5 max-md:overflow-visible">
+  <div class="title text-center mb-6 sm:mb-10" data-animation="fadeInUp">Как мы делаем ремонт</div>
+  <div class="video-slider swiper max-md:-mx-1.5 max-md:overflow-visible" data-animation="fadeInUp">
     <div class="swiper-wrapper">
       <% for(let i = 0; i < 6; i++) { %>
       <div class="swiper-slide max-md:w-[340px] max-md:px-1.5">
@@ -511,50 +419,52 @@
 
 <!-- Дизайн-проекты -->
 <section class="p-section design">
-  <div class="design-image">
+  <div class="design-image" data-animation="fadeInLeft">
     <img src="img/design.png" alt="">
   </div>
   <div class="design-content">
-    <div class="title mb-4 sm:mb-6">
+    <div class="title mb-4 sm:mb-6" data-animation="fadeInUp">
       Дизайн-проекты <br>
       <span>по себестоимости</span>
     </div>
-    <div class="sm:text-xl font-semibold mb-4 sm:mb-6">
+    <div class="sm:text-xl font-semibold mb-4 sm:mb-6" data-animation="fadeInUp">
       Мы разработали более 5000 дизайн-проектов
       для наших клиентов.
     </div>
-    <div class="max-sm:text-sm">
+    <div class="max-sm:text-sm" data-animation="fadeInUp">
       Поэтому мы можем подобрать вам один из наших готовых
       решений бесплатно, либо разработать уникальный дизайн
       интерьера конкретно для вас
     </div>
-    <button class="mt-10 btn btn-primary btn-theme-fill">Получить предложение</button>
+    <div class="mt-10 " data-animation="fadeInUp">
+      <button class="btn btn-primary btn-theme-fill">Получить предложение</button>
+    </div>
   </div>
 </section>
 
 <!-- Обустройство квартиры -->
-<section class="mebel p-section rounded-section bg-l3">
-  <div class="title mb-4 lg:hidden">
+<section class="mebel p-section rounded-section bg-l3 overflow-hidden">
+  <div class="title mb-4 lg:hidden" data-animation="fadeInUp">
     Мебель Кравченко
   </div>
-  <div class="mb-8 lg:hidden">
+  <div class="mb-8 lg:hidden" data-animation="fadeInUp">
     Дизайнерская мебель на любой вкус
   </div>
   <div class="mebel-grid">
     <div class="mebel-content">
-      <div class="title mb-4 max-lg:hidden">
+      <div class="title mb-4 max-lg:hidden" data-animation="fadeInUp">
         Обустройство <span>квартиры</span>
       </div>
-      <div class="mb-8 max-lg:hidden">
+      <div class="mb-8 max-lg:hidden" data-animation="fadeInUp">
         Дизайнерская мебель на любой вкус
       </div>
-      <div class="opacity-70 max-sm:text-sm">
+      <div class="opacity-70 max-sm:text-sm" data-animation="fadeInUp">
         Мы основали нашу компанию с целью создавать прекрасные и функциональные предметы мебели, которые подчеркнут индивидуальность и стиль каждого нашего клиента.
         <br><br>
         Для нас мебель — это не только функциональный элемент интерьера, но и произведение искусства, способное передавать эмоции и создавать настроение. Именно поэтому мы придаем особое внимание дизайну и качеству выпускаемой нами продукции.
 
       </div>
-      <div class="mt-6 sm:mt-10 flex flex-wrap gap-3">
+      <div class="mt-6 sm:mt-10 flex flex-wrap gap-3" data-animation="fadeInUp">
         <div class="py-2 px-5 rounded-full border border-default/15">
           <span class="opacity-70">Дизайнерская мебель</span>
         </div>
@@ -575,11 +485,11 @@
         </div>
       </div>
 
-      <div class="flex mt-6 sm:mt-10">
+      <div class="flex mt-6 sm:mt-10" data-animation="fadeInUp">
         <a href="javascript:;" class="btn btn-primary btn-theme-fill">Перейти на платформу</a>
       </div>
     </div>
-    <div class="mebel-image ratio ratio-[570/662]">
+    <div class="mebel-image ratio ratio-[570/662]" data-animation="fadeInRight">
       <img src="img/mebel.jpg" alt="" class="absolute-fit object-cover">
     </div>
   </div>
@@ -587,14 +497,14 @@
 
 <!-- Почему нам доверяют -->
 <section class="p-section belive overflow-hidden">
-  <div class="title mb-6 sm:mb-10 lg:hidden">Почему нам доверяют</div>
+  <div class="title mb-6 sm:mb-10 lg:hidden" data-animation="fadeInUp">Почему нам доверяют</div>
   <div class="belive-grid">
     <div class="belive-content">
-      <div class="title mb-6 sm:mb-10 max-lg:hidden">Почему нам доверяют</div>
+      <div class="title mb-6 sm:mb-10 max-lg:hidden" data-animation="fadeInUp">Почему нам доверяют</div>
 
       <div class="flex flex-col gap-3 sm:gap-5">
         <% for(let i = 0; i < 5; i++) { %>
-        <div>
+        <div data-animation="fadeInUp">
           <div class="flex items-center gap-2">
             <c-icon class="icon text-primary" href="img/icons.svg#gal-ochka-alt"></c-icon>
             <div class="font-alt font-bold text-xl sm:text-1.5xl">2 года гарантии</div>
@@ -605,11 +515,11 @@
         </div>
         <% } %>
       </div>
-      <div class="mt-6 sm:mt-10 flex">
+      <div class="mt-6 sm:mt-10 flex" data-animation="fadeInUp">
         <a href="javascript:;" class="btn btn-primary btn-theme-fill">Оставить заявку</a>
       </div>
     </div>
-    <div class="belive-image ratio ratio-[343/320]">
+    <div class="belive-image ratio ratio-[343/320]" data-animation="fadeInUp">
       <img src="img/logo-white.svg" alt="" class="absolute sm:top-10 sm:right-9 top-4 right-3">
       <img src="img/belive.png" alt="" class="absolute top-4 max-w-none left-1/2 -translate-x-1/2 max-sm:w-[140%]">
     </div>
@@ -619,23 +529,23 @@
 
 <!-- Бесплатная консультация -->
 <section class="pray rounded-section">
-  <div class="title mb-4 lg:hidden">
+  <div class="title mb-4 lg:hidden" data-animation="fadeInUp">
     Бесплатная консультация
     специалиста
   </div>
-  <div class="mb-8 lg:hidden">
+  <div class="mb-8 lg:hidden" data-animation="fadeInUp">
     Оставьте заявку и мы перезвоним вам в ближайшее время
   </div>
   <div class="pray-content">
-    <div class="title mb-6 max-lg:hidden">
+    <div class="title mb-6 max-lg:hidden" data-animation="fadeInUp">
       <span class="!text-[#FFC5A5]">Бесплатная</span> консультация
       специалиста
     </div>
-    <div class=" max-lg:hidden">
+    <div class=" max-lg:hidden" data-animation="fadeInUp">
       Оставьте заявку и мы перезвоним вам в ближайшее время
     </div>
 
-    <div class="mt-6 lg:mt-18 pray-checklist">
+    <div class="mt-6 lg:mt-18 pray-checklist" data-animation="fadeInUp">
       <div class="font-alt font-bold text-2xl mb-6">Что вы получите после консультации</div>
       <div class="flex flex-col gap-4">
         <% for(let i = 0; i < 3; i++) { %>
@@ -651,7 +561,7 @@
       </div>
     </div>
   </div>
-  <div class="pray-form">
+  <div class="pray-form" data-animation="fadeInUp">
     <div class="text-2xl sm:text-3.5xl font-alt font-bold mb-6">Оставить заявку</div>
     <div class="flex flex-col gap-4">
       <label class="block">
@@ -695,15 +605,15 @@
 </section>
 
 <section class="team p-section overflow-hidden">
-  <div class="title text-center mb-6 sm:mb-10">Наша команда</div>
+  <div class="title text-center mb-6 sm:mb-10" data-animation="fadeInUp">Наша команда</div>
 
-  <div class="team-slider swiper -mx-2 overflow-visible">
+  <div class="team-slider swiper -mx-2 overflow-visible" data-animation="fadeInUp">
     <div class="swiper-wrapper">
       <% for(let i = 0; i < 10; i++) { %>
       <div class="swiper-slide w-64 sm:w-1/2 lg:w-1/3 px-2">
         <div class="team-item">
           <div class="team-item-image ratio ratio-1/1" style="background: #FEB853;">
-            <img src="img/team-sempl.png" alt="" class="absolute-fit object-bottom object-none object-scale-down">
+            <img src="img/team-sempl.png" alt="" class="absolute-fit object-bottom object-scale-down">
           </div>
           <div class="team-item-content">
             <div class="font-alt font-bold sm:text-1.5xl">Александр Кравченко</div>
@@ -732,19 +642,19 @@
 </script>
 
 <section class="excursion">
-  <div class="excursion-block">
+  <div class="excursion-block" data-animation="fadeInUp">
     <div class="excursion-content">
-      <div class="title">
+      <div class="title" data-animation="fadeInUp">
         Хотите на экскурсию <br class="max-sm:hidden">
         по нашим объектам?
       </div>
-      <div class="mt-6 max-sm:text-sm">
+      <div class="mt-6 max-sm:text-sm" data-animation="fadeInUp">
         Вместе с прорабом отправьтесь на экскурсию <br class="max-sm:hidden">
         по нашим действующим объектам и убедитесь <br class="max-sm:hidden">
         в качестве наших работ
       </div>
     </div>
-    <div class="excursion-form">
+    <div class="excursion-form" data-animation="fadeInUp">
       <div class="font-alt font-bold text-2xl sm:text-3.5xl mb-6">
         Оставить заявку
       </div>
@@ -768,11 +678,11 @@
 </section>
 
 <section class="p-section question">
-  <div class="title text-center mb-6 sm:mb-10">Вопрос-ответ</div>
+  <div class="title text-center mb-6 sm:mb-10" data-animation="fadeInUp">Вопрос-ответ</div>
 
   <div class="grid lg:grid-cols-2 sm:gap-4 lg:gap-6 items-start">
     <% for(let i = 0; i < 6; i++) { %>
-    <a href="javascript:;" class="question-item btn flex-col px-2 max-sm:-mx-2 sm:p-0 h-auto group" data-toggle-cover data-toggle-link>
+    <a href="javascript:;" class="question-item btn flex-col px-2 max-sm:-mx-2 sm:p-0 h-auto group" data-toggle-cover data-toggle-link data-animation="fadeInUp">
       <div class="flex items-center sm:px-4 max-sm:py-4 sm:h-20 w-full rounded-none gap-3">
         <c-icon class="icon text-2xl text-[#EE9F73]" href="img/icons.svg#question"></c-icon>
         <div class="font-alt text-sm sm:text-xl font-semibold">Возможно у вас заказать дизайн проект?</div>
@@ -790,47 +700,7 @@
   </div>
 </section>
 
-<footer class="footer">
-  <div class="flex lg:items-center justify-between gap-5 max-lg:flex-col">
-    <div class="flex items-start sm:items-center gap-4 sm:gap-10 max-sm:flex-col">
-      <img src="img/logo.svg" alt="">
 
-      <div class="opacity-70">
-        Вся базаактуальной <br>
-        недвижимостив одном месте
-      </div>
-    </div>
-    <div class="">
-      <div class="flex gap-2">
-        <button class="btn btn-xs btn-fill btn-[#f00] rounded-lg px-3">
-          <c-icon class="icon" href="img/icons.svg#play"></c-icon>
-        </button>
-        <button class="btn btn-xs btn-fill btn-[#0077FF] rounded-lg px-3">
-          <c-icon class="icon" href="img/icons.svg#vk"></c-icon>
-        </button>
-        <button class="btn btn-xs btn-fill btn-[#33AADE] rounded-lg px-3">
-          <c-icon class="icon" href="img/icons.svg#telegram"></c-icon>
-        </button>
-        <button class="btn btn-xs btn-fill btn-[#26D044] rounded-lg px-3">
-          <c-icon class="icon" href="img/icons.svg#whatsapp"></c-icon>
-        </button>
-      </div>
-    </div>
-    <div class="flex flex-col items-start">
-      <div class="font-alt mb-1 ">г. Краснодар, ул. Промышленная 52</div>
-      <a href="javascript:;" class="btn btn-text hover-underline">
-        <span class="font-bold sm:text-1.5xl max-sm:text-primary font-alt">8 800 707 06 12</span>
-      </a>
-    </div>
-  </div>
-  <div class="my-4 border-t border-default/10"></div>
-  <div class="flex lg:items-center gap-3 lg:gap-20 opacity-60 max-lg:flex-col">
-    <div class="mr-auto">ООО "Команда Кравченко"</div>
-    <div class="">ИНН 2311243962</div>
-    <div class="">КПП 231001001</div>
-    <div class="">ОГРН 1172375071417</div>
-  </div>
-</footer>
 
 
 <%= require('./html-includes/footer.html')() %>

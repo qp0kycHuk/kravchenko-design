@@ -37,6 +37,7 @@ function loadHandler() {
 
   document.addEventListener('toggleopen', toggleOpenHandler)
   document.addEventListener('toggleclose', toggleCloseHandler)
+  scrollHandler()
 }
 
 const menusIds = ['lk-menu', 'menu', 'catalog-filter']
@@ -51,4 +52,10 @@ function toggleCloseHandler(event: any) {
   if (menusIds.includes(event.detail.target.id)) {
     document.body.classList.remove('menu-opened')
   }
+}
+
+window.addEventListener('scroll', scrollHandler)
+
+function scrollHandler() {
+  document.body.classList.toggle('scroll-top', window.scrollY == 0)
 }

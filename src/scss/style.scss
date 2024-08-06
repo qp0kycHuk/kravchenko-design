@@ -197,8 +197,11 @@ body {
   justify-content: space-between;
   padding-top    : 24px;
   padding-bottom : 24px;
-  position       : relative;
-  z-index        : 2;
+  position       : fixed;
+  top            : 0;
+  width          : 100%;
+  z-index        : theme('zIndex.1');
+  transition     : .25s ease;
 
   @media (max-width: theme('screens.md')) {
     padding-top   : 12px;
@@ -212,6 +215,25 @@ body {
 
     }
   }
+
+  &-placeholder {
+    height: 112px;
+
+    @media (max-width: theme('screens.lg')) {
+      height: 104px;
+    }
+
+    @media (max-width: theme('screens.md')) {
+      height: 60px;
+    }
+  }
+}
+
+body:not(.scroll-top) .header {
+  background    : theme('colors.l3');
+  padding-top   : 10px;
+  padding-bottom: 10px;
+  box-shadow    : 0 4px 18px 0 rgba(0, 0, 0, 0.05);
 }
 
 .menu {
@@ -912,4 +934,67 @@ body {
   background    : theme('colors.l3');
   padding-top   : 20px;
   padding-bottom: 16px;
+}
+
+.dialog {
+  max-width    : 100%;
+  box-shadow   : 0 4px 18px 0 rgba(0, 0, 0, 0.05);
+  background   : theme('colors.l3');
+  border-radius: 32px;
+
+  @media (max-width: theme('screens.sm')) {
+    border-radius: 24px;
+  }
+
+}
+
+.dialog-policy {
+  width: 970px;
+}
+
+.dialog-info {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  text-align    : center;
+  width         : 320px;
+  padding       : 38px 12px 50px;
+
+  &-image {
+    width        : 132px;
+    height       : 132px;
+    border-radius: 50%;
+    background   :
+      radial-gradient(100% 100% at 50% 0%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 73.05%), currentColor;
+    position     : relative;
+    margin-bottom: 20px;
+
+    &::before {
+      content      : '';
+      position     : absolute;
+      inset        : 0;
+      border-radius: inherit;
+      box-shadow   : 0 12px 30px 0 currentColor;
+      opacity      : .5;
+
+    }
+  }
+}
+
+[data-animation] {
+  opacity: 0;
+}
+
+.not-found {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  text-align    : center;
+  padding-top   : 118px;
+  padding-bottom: 175px;
+
+  @media (max-width: theme('screens.sm')) {
+    padding-top   : 32px;
+    padding-bottom: 32px;
+  }
 }
